@@ -1,0 +1,33 @@
+# ═══════════════════════════════════════════════════════════════
+# requirements.txt — Hệ thống Chấm công Khuôn mặt
+# IResNet-50 · ArcFace · FAISS · RetinaFace (insightface) · Streamlit
+# ═══════════════════════════════════════════════════════════════
+
+# ── Deep Learning Framework ──────────────────────────────────
+torch>=2.0.0
+torchvision>=0.15.0
+
+# ── Computer Vision ──────────────────────────────────────────
+opencv-python>=4.8.0
+Pillow>=10.0.0
+scikit-image>=0.21.0      # CLAHE, image quality metrics
+
+# ── Face Detection — Primary: InsightFace (RetinaFace) ───────
+insightface>=0.7.3
+onnxruntime-gpu>=1.16.0   # GPU inference cho RetinaFace
+                           # Dùng onnxruntime>=1.16.0 nếu không có GPU
+
+# ── Face Detection — Fallback: MTCNN ─────────────────────────
+facenet-pytorch>=2.5.3
+
+# ── Vector Database ──────────────────────────────────────────
+faiss-cpu>=1.7.4
+
+# ── Data & Scientific ────────────────────────────────────────
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.11.0              # Face alignment (affine transform)
+
+# ── Web UI ───────────────────────────────────────────────────
+streamlit>=1.28.0
+streamlit-option-menu>=0.3.6
